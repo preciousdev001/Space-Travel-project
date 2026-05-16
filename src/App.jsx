@@ -1,22 +1,41 @@
-import styles from "./App.module.css";
-import {BrowserRouter, routes, route} from "react-router-dom"
+import { BrowserRouter, routes, route } from "react-router-dom";
 
-import navBar from "../Components/NavBar";
+import NavBar from "../Components/NavBar";
 import navigateBackButton from "../Components/NavigateBackButton";
 import Homepage from "../Pages/Home";
 import spacecrafts from "../Pages/Spacecrafts";
-import spacecraftsDetails from "../Pages/SpacecraftsDetails";
+import SpacecraftDetails from "../Pages/SpacecraftDetails";
 import spacecraftsNew from "../Pages/SpacecraftsNew";
 import planets from "../Pages/Planets";
 
+import styles from "./App.module.css";
+import NavigateBackButton from "../Components/NavigateBackButton";
 
-function App ()
-{
+function App() {
+  const data = [];
   return (
-    <>
-      <h1>Space Travel</h1>
-      <
-      </>
+    <div className={styles.mainContainer}>
+      <BrowserRouter>
+        <NavBar data={data} />
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Planets" element={<Planets />} />
+          <Route path="/New-Spacecraft" element={<SpacecraftsNew />} />
+
+          {/* dynamic routing */}
+          {data.map((dataElement) => (
+            <Route
+              key={dataElement.id}
+              path={`/SpacecraftDetails/${dataElement.id}`}
+              element={<SpacecraftDetails data={dataElement} />}
+            />
+          ))}
+        </Routes>
+
+        <NavigateBackButton />
+      </BrowserRouter>
+    </div>
   );
 }
 

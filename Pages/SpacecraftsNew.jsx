@@ -1,5 +1,5 @@
-function spacecraftsNew() {
+function SpacecraftsNew() {
   return <div></div>;
 }
 
-export default spacecraftsNew;
+export default SpacecraftsNew;

@@ -1,5 +1,5 @@
-function spacecrafts() {
+function Spacecrafts() {
   return <div></div>;
 }
 
-export default spacecrafts;
+export default Spacecrafts;

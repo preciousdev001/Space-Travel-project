@@ -1,5 +1,5 @@
-function planets() {
+function Planets() {
   return <div></div>;
 }
 
-export default planets;
+export default Planets;
