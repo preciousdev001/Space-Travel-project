@@ -10,6 +10,7 @@ import planets from "../Pages/Planets";
 
 import styles from "./App.module.css";
 import NavigateBackButton from "../Components/NavigateBackButton";
+import Spacecrafts from "../Pages/Spacecrafts";
 
 function App() {
   const data = [];
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/Planets" element={<Planets />} />
+          <Route path="/Spacecrafts" element={<Spacecrafts />} />
           <Route path="/New-Spacecraft" element={<SpacecraftsNew />} />
 
           {/* dynamic routing */}
