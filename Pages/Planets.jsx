@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import loading from "../Components/Loading/Loading";
+import Loading from "../Components/Loading/Loading";
 
 function Planets() {
   const [planets, setPlanets] = useState([]);
@@ -22,7 +22,7 @@ function Planets() {
   }, []);
 
   if (isLoading) {
-    return <loading />;
+    return <Loading />;
   }
 
   return (

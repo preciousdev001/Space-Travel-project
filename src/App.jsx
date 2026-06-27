@@ -1,12 +1,13 @@
-import { BrowserRouter, routes, route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from "../Components/NavBar";
 import navigateBackButton from "../Components/NavigateBackButton";
 import Homepage from "../Pages/Home";
 import spacecrafts from "../Pages/Spacecrafts";
 import SpacecraftDetails from "../Pages/SpacecraftDetails";
-import spacecraftsNew from "../Pages/SpacecraftsNew";
-import planets from "../Pages/Planets";
+import SpacecraftsNew from "../Pages/SpacecraftsNew";
+import Planets from "../Pages/Planets";
+import NotFound from "../Pages/NotFound";
 
 import styles from "./App.module.css";
 import NavigateBackButton from "../Components/NavigateBackButton";
@@ -24,6 +25,12 @@ function App() {
           <Route path="/Planets" element={<Planets />} />
           <Route path="/Spacecrafts" element={<Spacecrafts />} />
           <Route path="/New-Spacecraft" element={<SpacecraftsNew />} />
+
+          {/* {redirects all unknown routes to homepage} */}
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
+
+          {/* redirects all unknown routes to an error page */}
+          <Route path="/NotFound" element={<NotFound />} />
 
           {/* dynamic routing */}
           {data.map((dataElement) => (

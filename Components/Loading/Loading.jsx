@@ -1,6 +1,6 @@
 import styles from "./Loading.module.css";
 
-function loading() {
+function Loading() {
   return (
     <div className={styles.loaderContainer}>
       <div className={styles.spinner}></div>
@@ -9,4 +9,4 @@ function loading() {
   );
 }
 
-export default loading;
+export default Loading;
