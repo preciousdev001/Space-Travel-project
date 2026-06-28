@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { sendSpacecraftToPlanet } from "../src/services/SpaceTravelApi";
+import SpaceTravelApi from "../src/services/SpaceTravelApi";
 
 function SpacecraftItem({ ship, allPlanets, currentPlanetId, onMoveComplete }) {
   const [isMoving, setIsMoving] = useState(false);
@@ -7,7 +7,10 @@ function SpacecraftItem({ ship, allPlanets, currentPlanetId, onMoveComplete }) {
   const handleTransfer = async (targetPlanetId) => {
     if (!targetPlanetId) return;
     try {
-      await sendSpacecraftToPlanet({ spacecraftId: ship.id, targetPlanetId });
+      await SpaceTravelApi.sendSpacecraftToPlanet({
+        spacecraftId: ship.id,
+        targetPlanetId,
+      });
       setIsMoving(false);
       onMoveComplete();
     } catch (err) {
