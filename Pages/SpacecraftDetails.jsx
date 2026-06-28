@@ -1,34 +1,55 @@
 import { useState, useEffect } from "react";
-import loading from "../Components/Loading/Loading";
+import { useParams } from "react-router-dom";
+import Loading from "../Components/Loading/Loading";
+import SpaceTravelApi from "../src/services/SpaceTravelApi";
 
 function SpacecraftDetails({ data }) {
+  const { id } = useParams();
   const [spaceCraftDetails, setSpaceCraftDetails] = useState([]);
   const [isloading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchSpaceCraftDetailsData = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const response = await SpaceTravelApi.getSpacecraftById({ id });
+      setSpaceCraftDetails(response.data);
+    } catch (err) {
+      setError("Failed to establish secure connection to spacecraft details.");
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    async function fetchSpaceCraftDetailsData() {
-      setIsLoading(true);
-
-      try {
-        const response = await fetch("API_HERE");
-        const data = await response.json;
-        setSpaceCraftDetails(data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  }, []);
+    fetchSpaceCraftDetailsData();
+  }, [id]);
 
   if (isloading) {
-    return <loading />;
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (spaceCraftDetails.length === 0) {
+    return (
+      <div>No spacecfraft data found for this specific registry link.</div>
+    );
   }
 
   return (
     <div>
       <h1>Spacecraft Details</h1>
-      {/* {spacecfraft details content and data goes here} */}
+      <div>
+        <p>Name: {spaceCraftDetails.name}</p>
+        <p>Type: {spaceCraftDetails.type}</p>
+        <p>Capacity: {spaceCraftDetails.capacity} Passengers</p>
+        <p>Description: {spaceCraftDetails.description}</p>
+      </div>
     </div>
   );
 }
