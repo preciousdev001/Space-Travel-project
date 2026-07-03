@@ -1,5 +1,5 @@
 import React from "react";
-import SpacecraftItem from "./SpacecraftItem";
+import SpacecraftItem from "../../Components/SpacecraftItem";
 
 function PlanetCard({ planet, allSpacecrafts, allPlanets, onMoveComplete }) {
   const dockedShips = allSpacecrafts.filter(
@@ -19,7 +19,7 @@ function PlanetCard({ planet, allSpacecrafts, allPlanets, onMoveComplete }) {
           ></SpacecraftItem>
         ))}
       </ul>
-      <p>{planet.population}</p>
+      <p>{planet.currentPopulation}</p>
     </div>
   );
 }

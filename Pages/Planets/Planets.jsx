@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Loading from "../Components/Loading/Loading";
-import SpaceTravelApi from "../src/services/SpaceTravelApi";
-import PlanetCard from "../Components/PlanetCard";
+import Loading from "../../Components/Loading/Loading";
+import SpaceTravelApi from "../../src/services/SpaceTravelApi";
+import PlanetCard from "./PlanetCard";
 
 function Planets() {
   const [planets, setPlanets] = useState([]);

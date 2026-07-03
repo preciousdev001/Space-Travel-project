@@ -33,13 +33,10 @@ function App() {
           <Route path="/NotFound" element={<NotFound />} />
 
           {/* dynamic routing */}
-          {data.map((dataElement) => (
-            <Route
-              key={dataElement.id}
-              path={`/SpacecraftDetails/${dataElement.id}`}
-              element={<SpacecraftDetails data={dataElement} />}
-            />
-          ))}
+          <Route
+            path="/SpacecraftDetails/:id"
+            element={<SpacecraftDetails />}
+          />
         </Routes>
 
         <NavigateBackButton />

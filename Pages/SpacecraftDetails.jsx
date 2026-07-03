@@ -35,7 +35,7 @@ function SpacecraftDetails({ data }) {
     return <div>Error: {error}</div>;
   }
 
-  if (spaceCraftDetails.length === 0) {
+  if (!spaceCraftDetails || spaceCraftDetails.length === 0) {
     return (
       <div>No spacecfraft data found for this specific registry link.</div>
     );
