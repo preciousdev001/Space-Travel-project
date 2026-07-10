@@ -6,7 +6,7 @@ import Homepage from "../Pages/Home";
 import spacecrafts from "../Pages/Spacecrafts";
 import SpacecraftDetails from "../Pages/SpacecraftDetails";
 import SpacecraftsNew from "../Pages/SpacecraftsNew";
-import Planets from "../Pages/Planets";
+import Planets from "../Pages/Planets/Planets";
 import NotFound from "../Pages/NotFound";
 
 import styles from "./App.module.css";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SpaceTravelApi from "../src/services/SpaceTravelApi";
+import SpaceTravelApi from "../../src/services/SpaceTravelApi";
 
 function SpacecraftItem({ ship, allPlanets, currentPlanetId, onMoveComplete }) {
   const [isMoving, setIsMoving] = useState(false);

@@ -1,5 +1,5 @@
 import React from "react";
-import SpacecraftItem from "../../Components/SpacecraftItem";
+import SpacecraftItem from "./SpacecraftItem";
 
 function PlanetCard({ planet, allSpacecrafts, allPlanets, onMoveComplete }) {
   const dockedShips = allSpacecrafts.filter(

@@ -1,0 +1,33 @@
+/* Block: The master outer container */
+.error-banner {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: rgba(255, 51, 51, 0.05);
+  border: 1px solid #ff3333;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Element: The inner text layout wrapper */
+.error-banner__content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Element: The distinct red title */
+.error-banner__title {
+  font-weight: bold;
+  color: #ff3333;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Element: The flexible message paragraph */
+.error-banner__message {
+  color: #e0e0e0;
+  margin: 0;
+  font-size: 14px;
+}

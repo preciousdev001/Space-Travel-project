@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./SpacecraftsNew.module.css";
+import Loading from "../Components/Loading/Loading";
+import Error from "../Components/Error";
 import { useNavigate } from "react-router-dom";
 import SpaceTravelApi from "../src/services/SpaceTravelApi";
 
@@ -16,8 +18,9 @@ const FORM_FIELDS = [
 ];
 function SpacecraftsNew() {
   const [formData, setFormData] = useState(INITIAL_DATA);
-
-  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [formError, setFormError] = useState({});
 
   const navigate = useNavigate();
 
@@ -38,12 +41,14 @@ function SpacecraftsNew() {
     }
 
     if (Object.keys(newFormErrors).length > 0) {
-      setErrors(newFormErrors);
+      setFormError(newFormErrors);
       return;
     }
 
     try {
-      setErrors({});
+      setIsLoading(true);
+      setError(null);
+      setFormError({});
       await SpaceTravelApi.buildSpacecraft({
         name: formData.name,
         capacity: Number(formData.capacity),
@@ -52,8 +57,21 @@ function SpacecraftsNew() {
       navigate("/");
     } catch (error) {
       console.error("Launch failed:", error);
+      setError(
+        "New spacecraft creation failed. No new spacecraft added to registry.",
+      );
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error message={error} />;
+  }
 
   return (
     <div>
@@ -72,12 +90,12 @@ function SpacecraftsNew() {
               <input
                 type={field.type}
                 name={field.name}
-                value={formData[formData.name]}
+                value={formData[field.name]}
                 onChange={handleInputChange}
               />
             )}
-            {errors[field.name] && (
-              <p className={styles.errorText}>{errors[field.name]}</p>
+            {formError[field.name] && (
+              <p className={styles.errorText}>{formError[field.name]}</p>
             )}
           </div>
         ))}

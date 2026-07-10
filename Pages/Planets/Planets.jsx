@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Loading from "../../Components/Loading/Loading";
+import Error from "../../Components/Error";
 import SpaceTravelApi from "../../src/services/SpaceTravelApi";
 import PlanetCard from "./PlanetCard";
+import styles from "./Planets.module.css";
 
 function Planets() {
   const [planets, setPlanets] = useState([]);
@@ -39,8 +41,9 @@ function Planets() {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error message={error} />;
   }
+
   return (
     <div>
       <h1>Planets</h1>
