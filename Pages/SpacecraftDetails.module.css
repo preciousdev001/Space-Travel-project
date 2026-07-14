@@ -1,0 +1,97 @@
+/* Block: Spacecraft Details Panel */
+.details {
+  background-color: #0c0f12; /* Deep space black */
+  border: 2px solid #62ff62; /* Vibrant green outer terminal border */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2); /* Cyber teal ambient glow */
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
+}
+
+/* Elements: Title Readout Header */
+.details__header {
+  border-bottom: 2px dashed rgba(98, 255, 98, 0.4);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.details__title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Elements: Core Telemetry Grid */
+.details__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+/* Individual spec rows layout */
+.details__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(136, 146, 176, 0.15);
+}
+
+.details__label {
+  color: #8892b0; /* Subdued slate gray for indicators */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.details__value {
+  color: #62ff62; /* Active diagnostic green values */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* White text override for high contrast numbers/names if needed */
+.details__value--highlight {
+  color: #ffffff;
+}
+
+/* Elements: Controls / Action Row */
+.details__actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.details__btn {
+  background: transparent;
+  border: 1px solid #62ff62;
+  color: #62ff62;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.details__btn:hover {
+  background-color: rgba(98, 255, 98, 0.1);
+  box-shadow: 0 0 10px rgba(98, 255, 98, 0.25);
+}
+
+/* Back / Secondary action override */
+.details__btn--secondary {
+  border-color: #8892b0;
+  color: #8892b0;
+}
+
+.details__btn--secondary:hover {
+  background-color: rgba(136, 146, 176, 0.1);
+  box-shadow: none;
+}

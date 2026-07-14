@@ -45,8 +45,8 @@ function Planets() {
   }
 
   return (
-    <div>
-      <h1>Planets</h1>
+    <div className={styles["planets-page"]}>
+      <h1 className={styles["planets-page__header"]}>Planets Overview</h1>
       {/* testing arrays loading */}
       <pre>
         {JSON.stringify({
@@ -55,7 +55,7 @@ function Planets() {
         })}
       </pre>
 
-      <div className="planets-container">
+      <div className={styles["planets-page__grid"]}>
         {planets.map((planet) => (
           <PlanetCard
             key={planet.id}

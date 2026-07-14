@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SpaceTravelApi from "../../src/services/SpaceTravelApi";
+import styles from "./SpacecraftItem.module.css";
 
 function SpacecraftItem({ ship, allPlanets, currentPlanetId, onMoveComplete }) {
   const [isMoving, setIsMoving] = useState(false);
@@ -20,9 +21,12 @@ function SpacecraftItem({ ship, allPlanets, currentPlanetId, onMoveComplete }) {
   };
 
   return (
-    <li>
-      <span>{ship.name}</span>
-      <button onClick={() => setIsMoving(!isMoving)}>
+    <li className={styles.item}>
+      <span className={styles["item__name"]}>{ship.name}</span>
+      <button
+        className={styles["item__button"]}
+        onClick={() => setIsMoving(!isMoving)}
+      >
         {isMoving ? "Cancel" : "Move"}
       </button>
 

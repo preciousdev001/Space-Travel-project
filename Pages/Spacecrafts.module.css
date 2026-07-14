@@ -1,0 +1,62 @@
+/* 1. Page Layout Wrapper */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 2. Header & Action Control Bar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(98, 255, 98, 0.2); /* Faint tactical underline */
+  padding-bottom: 15px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* The button to add a new spacecraft */
+.createButton {
+  background-color: transparent;
+  color: #62ff62; /* Terminal green */
+  border: 1px solid #62ff62;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.createButton:hover {
+  background-color: rgba(98, 255, 98, 0.1);
+  box-shadow: 0 0 12px rgba(98, 255, 98, 0.3);
+}
+
+/* 3. The Fleet Grid */
+.grid {
+  display: grid;
+  /* Automatically wraps cards to the next row if the screen shrinks */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Wrapper for handling empty state messages gracefully */
+.noData {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8892b0;
+  font-style: italic;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}

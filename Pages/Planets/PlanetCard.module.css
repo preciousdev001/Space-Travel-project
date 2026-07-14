@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Block: Planet Card Container
+   ========================================================================== */
+.card {
+  background-color: transparent; /* Covers grid container background except in gaps */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Spreads cards evenly to match row heights */
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.card:hover {
+  background-color: #12171c; /* Active card highlight */
+}
+
+/* ==========================================================================
+   Elements: Header Sub-Section
+   ========================================================================== */
+.card__header {
+  margin-bottom: 15px;
+}
+
+.card__title {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: bold;
+}
+
+.card__system-status {
+  font-size: 0.85rem;
+  color: #62ff62; /* Vibrant System Green */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.card__system-status strong {
+  color: #ffffff; /* Keeps the population number white for high contrast */
+}
+
+/* ==========================================================================
+   Elements: Body & Vessel Lists
+   ========================================================================== */
+.card__body {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.card__vessel-heading {
+  color: #8892b0;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Reset standard <ul> properties for clean spacing */
+.card__metric {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card__fallback-text {
+  color: #555555;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.grid-item {
+  background-color: #000000; /* Solid color hides the green underneath */
+  padding: 20px;
+}

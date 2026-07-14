@@ -1,0 +1,52 @@
+/* Block: Spacecraft Row Item */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: #12171c; /* Slightly lighter than the card background for contrast */
+  border: 1px solid rgba(98, 255, 98, 0.15); /* Subdued green border */
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Row highlight when hovering over a specific vessel tracking row */
+.item:hover {
+  border-color: #62ff62; /* Vibrant green sharpens on hover */
+  background-color: #171e25;
+}
+
+/* Remove margin from the last item in the list block */
+.item:last-child {
+  margin-bottom: 0;
+}
+/* Elements & Controls */
+
+/* The actual name string of the vessel */
+.item__name {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* The action button used to trigger coordinate shifts */
+.item__button {
+  background: transparent;
+  border: 1px solid #62ff62;
+  color: #62ff62;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.item__button:hover {
+  background-color: rgba(98, 255, 98, 0.12);
+  box-shadow: 0 0 8px rgba(98, 255, 98, 0.3);
+}

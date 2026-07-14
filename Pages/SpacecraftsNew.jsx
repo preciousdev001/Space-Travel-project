@@ -74,21 +74,24 @@ function SpacecraftsNew() {
   }
 
   return (
-    <div>
-      <h2>New Spacecraft</h2>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.container}>
+      <h2 className={styles.title}>New Spacecraft</h2>
+
+      <form onSubmit={handleSubmit} className={styles.form}>
         {FORM_FIELDS.map((field) => (
-          <div key={field.name}>
-            <label>{field.label}</label>
+          <div key={field.name} className={styles.field}>
+            <label className={styles.label}>{field.label}</label>
             {field.type === "textarea" ? (
               <textarea
                 name={field.name}
+                className={styles.textarea}
                 value={formData[field.name]}
                 onChange={handleInputChange}
               />
             ) : (
               <input
                 type={field.type}
+                className={styles.input}
                 name={field.name}
                 value={formData[field.name]}
                 onChange={handleInputChange}

@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import Loading from "../Components/Loading/Loading";
 import SpaceTravelApi from "../src/services/SpaceTravelApi";
 import Error from "../Components/Error";
+import styles from "./SpacecraftDetails.module.css";
 
 function SpacecraftDetails({ data }) {
   const { id } = useParams();
-  const [spaceCraftDetails, setSpaceCraftDetails] = useState([]);
+  const [spaceCraftDetails, setSpaceCraftDetails] = useState(null);
   const [isloading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -38,18 +39,40 @@ function SpacecraftDetails({ data }) {
 
   if (!spaceCraftDetails || spaceCraftDetails.length === 0) {
     return (
-      <div>No spacecfraft data found for this specific registry link.</div>
+      <div className={styles.details}>
+        No spacecfraft data found for this specific registry link.
+      </div>
     );
   }
 
+  const techSpecs = [
+    { label: "Name", value: spaceCraftDetails.name, highlight: true },
+    { label: "Type", value: spaceCraftDetails.type },
+    { label: "Capacity", value: `${spaceCraftDetails.capacity} Passengers` },
+    {
+      label: "Description",
+      value: spaceCraftDetails.description,
+      highlight: true,
+    },
+  ];
+
   return (
-    <div>
-      <h1>Spacecraft Details</h1>
-      <div>
-        <p>Name: {spaceCraftDetails.name}</p>
-        <p>Type: {spaceCraftDetails.type}</p>
-        <p>Capacity: {spaceCraftDetails.capacity} Passengers</p>
-        <p>Description: {spaceCraftDetails.description}</p>
+    <div className={styles.details}>
+      <div className={styles["details__header"]}>
+        <h1 className={styles["details__title"]}>Spacecraft Details</h1>
+      </div>
+
+      <div className={styles["details__grid"]}>
+        {techSpecs.map((spec, index) => (
+          <div key={index} className={styles["details__row"]}>
+            <span className={styles["details__label"]}>{spec.label}</span>
+            <span
+              className={`${styles["details__value"]} ${spec.highlight ? styles["details__value--highlight"] : ""}`}
+            >
+              {spec.value}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

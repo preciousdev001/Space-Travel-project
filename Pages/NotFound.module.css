@@ -1,0 +1,65 @@
+/* Block: Main Page Wrapper */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: #0c0f12; /* Deep space dark background */
+  color: #ffffff;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace; /* Terminal aesthetic */
+}
+
+/*  Elements: Items nested inside the block /*
+/* The giant error status code */
+.not-found__code {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #ff3333; /* Alert red */
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+  letter-spacing: 4px;
+}
+
+/* The primary status heading */
+.not-found__title {
+  font-size: 2rem;
+  color: #62ff62;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* The descriptive body text */
+.not-found__description {
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.6;
+  color: #a0aec0;
+  margin-bottom: 40px;
+}
+
+/* Action button to return to safely charted sectors */
+.not-found__button {
+  background: transparent;
+  border: 2px solid #62ff62;
+  color: #62ff62;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
+}
+
+/* Hover state using native CSS nesting */
+.not-found__button:hover {
+  background-color: #00ffcc;
+  color: #0c0f12;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+}

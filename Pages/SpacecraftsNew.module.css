@@ -1,0 +1,103 @@
+/* 1. Form Panel Container (Centered Tactical Card) */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #0c0f12; /* Deep space black */
+  border: 2px solid #62ff62; /* Vibrant green outer terminal border */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(98, 255, 98, 0.15); /* Soft terminal glow */
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  border-bottom: 2px dashed rgba(98, 255, 98, 0.4);
+  padding-bottom: 15px;
+}
+
+/* 2. Input Group Layouts */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: #62ff62; /* Terminal Green labels */
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 3. Inputs and Textareas */
+.input,
+.textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(98, 255, 98, 0.3);
+  border-radius: 4px;
+  padding: 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #62ff62;
+  box-shadow: 0 0 8px rgba(98, 255, 98, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* 4. Validation Errors & Global Error States */
+.errorText {
+  color: #ff4a4a; /* Warning Red */
+  font-size: 0.8rem;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+/* 5. Launch/Submit Button */
+.submitButton {
+  background-color: transparent;
+  color: #62ff62;
+  border: 2px solid #62ff62;
+  border-radius: 4px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: rgba(98, 255, 98, 0.1);
+  box-shadow: 0 0 15px rgba(98, 255, 98, 0.4);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}

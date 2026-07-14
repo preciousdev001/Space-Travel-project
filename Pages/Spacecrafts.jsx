@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Loading from "../Components/Loading/Loading";
 import Error from "../Components/Error";
 import SpaceTravelApi from "../src/services/SpaceTravelApi";
+import { Link } from "react-router-dom";
+import styles from "./Spacecrafts.module.css";
 
 function Spacecrafts() {
   const [spaceCrafts, setSpaceCrafts] = useState([]);
@@ -48,21 +50,32 @@ function Spacecrafts() {
   }
 
   return (
-    <div>
-      <h1>Spacecrafts</h1>
-
-      <div className="spacecraft-list">
-        {
-          /* { content for spacecrafts} */
-          spaceCrafts.map((craft) => (
-            <div key={craft.id} className="spacecraft-card">
-              <h3>{craft.name}</h3>
-              <button>View Details</button>
-              <button>Decommission Spacecraft</button>
-            </div>
-          ))
-        }
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Spacecrafts</h1>
+        <Link to="/New-Spacecraft" className={styles.createButton}>
+          ➕Build Spacecraft
+        </Link>
       </div>
+
+      {spaceCrafts.length === 0 ? (
+        <div className={styles.noData}>No spacecraft in current registry.</div>
+      ) : (
+        <div className={styles.grid}>
+          {
+            /* { content for spacecrafts} */
+            spaceCrafts.map((craft) => (
+              <div key={craft.id} className="spacecraft-card">
+                <h3>{craft.name}</h3>
+                <button>View Details</button>
+                <button onClick={() => handleDestroy(craft.id)}>
+                  Decommission Spacecraft
+                </button>
+              </div>
+            ))
+          }
+        </div>
+      )}
     </div>
   );
 }

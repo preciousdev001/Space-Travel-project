@@ -1,0 +1,68 @@
+/* ==========================================================================
+   1. Design System Tokens (CSS Variables)
+   ========================================================================== */
+:root {
+  --bg-space-dark: #07090e; /* Deep space background */
+  --terminal-green: #62ff62; /* Vibrant tactical HUD green */
+  --cyber-teal: #00ffcc; /* Ambient neon cyan/teal */
+  --text-primary: #ffffff; /* Crisp white for terminal data readings */
+  --text-muted: #8892b0; /* Muted slate for label descriptors */
+
+  --font-terminal: "Courier New", Courier, monospace;
+}
+
+/* ==========================================================================
+   2. Document Resets & Base Foundations
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--bg-space-dark);
+  color: var(--text-primary);
+  font-family: var(--font-terminal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   3. Global Interactive Base Overrides
+   ========================================================================== */
+a {
+  color: var(--terminal-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--cyber-teal);
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+
+/* Custom tactical scrollbar across the whole web app */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-space-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171e25;
+  border: 1px solid rgba(98, 255, 98, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(98, 255, 98, 0.3);
+}

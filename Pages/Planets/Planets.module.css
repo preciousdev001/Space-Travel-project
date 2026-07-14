@@ -1,0 +1,68 @@
+/* Block: Planets Command Dashboard */
+.planets-page {
+  background-color: #0c0f12; /* Deep space black */
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace; /* Monospace terminal vibe */
+}
+
+/* Elements: Header and Grid Structure  */
+/* The main system title dashboard header */
+.planets-page__header {
+  margin-bottom: 30px;
+  border-bottom: 2px dashed #62ff62; /* Neon grid line accent */
+  padding-bottom: 15px;
+}
+
+.planets-page__subtitle {
+  font-size: 1rem;
+  color: #8892b0;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* Responsive grid layout for the planet cards */
+.planets-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  /* --- Your Color Variation Settings --- */
+  border: 2px solid #62ff62; /* Vibrant Green outer frame */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); /* Cyber Teal glow */
+
+  gap: 2px; /* Thickness of dividing lines */
+  background-color: rgba(
+    0,
+    255,
+    204,
+    0.25
+  ); /* Muted Teal internal grid lines */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background-color: #62ff62; /* Line Color: Green */
+  gap: 2px; /* Line Thickness: 2px */
+  border: 2px solid #62ff62; /* Outer Frame */
+}
+
+/* Fallback message container when data is offline */
+.planets-page__fallback {
+  padding: 40px;
+  text-align: center;
+  border: 1px dashed #ff3333;
+  background: rgba(255, 51, 51, 0.02);
+  border-radius: 4px;
+}
+
+.planets-page__fallback-text {
+  color: #ff3333; /* Alert red */
+  font-weight: bold;
+}
