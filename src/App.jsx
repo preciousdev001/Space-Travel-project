@@ -14,7 +14,11 @@ import NavigateBackButton from "../Components/NavigateBackButton";
 import Spacecrafts from "../Pages/Spacecrafts";
 
 function App() {
-  const data = [];
+  const data = [
+    { id: "Planets", title: "Planets" },
+    { id: "Spacecrafts", title: "Spacecrafts" },
+    { id: "New-Spacecraft", title: "Add Spacecraft" },
+  ];
   return (
     <div className={styles.mainContainer}>
       <BrowserRouter>
